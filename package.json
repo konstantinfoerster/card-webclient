@@ -81,8 +81,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "npx eslint --fix",
-      "npx prettier --write"
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "customElements": "custom-elements.json"
