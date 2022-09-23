@@ -1,5 +1,6 @@
-# card-webclient
-Card web-client build with Web Components
+# Card-Manger Web-client
+
+Manage your own cards with ease.
 
 ## Scripts
 
@@ -10,13 +11,21 @@ Card web-client build with Web Components
 - `lint` runs the linter for your project
 - `format` fixes linting and formatting errors
 
-## Tooling configs
+## Updates
 
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+Run `npm update` to update all dependencies to the latest compatible verision.
 
-If you customize the configuration a lot, you can consider moving them to individual files.
+## Useful links
 
+* https://lit.dev/docs/components/overview/
+* https://lit.dev/docs/api/templates/#nothing
+* https://vaadin.github.io/router/vaadin-router/#/classes/Router/demos/demo/index.html
+* https://redux-toolkit.js.org/api/createSlice
+* https://shoelace.style/
 
 ## TODO
 
-Do we need ServiceWorkers?
+* Do we need ServiceWorkers?
+* Add loading indicator to image-grid
+  > make transparent
+  > add spinner

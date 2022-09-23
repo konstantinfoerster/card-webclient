@@ -1,7 +1,7 @@
 import { html } from 'lit'
 import { fixture, expect } from '@open-wc/testing'
 
-import '../../src/pages/NotFound.js'
+import '../../../src/modules/common/NotFound.js'
 
 describe('not-found', () => {
   let element
@@ -9,7 +9,7 @@ describe('not-found', () => {
     element = await fixture(html`<not-found></not-found>`)
   })
 
-  it('renders a dummy text', () => {
+  it('renders 404 text', () => {
     const el = element.shadowRoot.querySelector('div')
     expect(el).to.exist
     expect(el.textContent).to.equal('404: Page Not Found')

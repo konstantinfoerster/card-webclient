@@ -4,14 +4,14 @@ import { fromRollup } from '@web/dev-server-rollup'
 
 const replace = fromRollup(rollupReplace)
 
-const filteredLogs = ['Running in dev mode', 'Lit is in dev mode'];
+const filteredLogs = ['Running in dev mode', 'Lit is in dev mode']
 
-export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
+export default /** @type {import('@web/test-runner').TestRunnerConfig} */ ({
   testRunnerHtml: testFramework =>
     `<html>
       <body>
-          <script src="/src/app.js" type="module"></script>
-        <script type="module" src="${testFramework}"></script>
+          <script src='/src/main.js' type='module'></script>
+        <script type='module' src='${testFramework}'></script>
       </body>
     </html>`,
 
@@ -37,7 +37,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.SHOELACE_BASE': JSON.stringify('/node_modules/@shoelace-style/shoelace/dist'),
+      'process.env.SHOELACE_BASE': JSON.stringify(
+        '/node_modules/@shoelace-style/shoelace/dist'
+      ),
     }),
   ],
 
@@ -55,4 +57,4 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   // ],
 
   // See documentation for all available options
-});
+})

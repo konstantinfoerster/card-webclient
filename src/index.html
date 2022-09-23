@@ -6,6 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <base href='/'>
 
+    <link rel='stylesheet' href='/node_modules/@shoelace-style/shoelace/dist/themes/light.css' />
     <style>
       html,
       body {
@@ -14,13 +15,16 @@
         font-family: var(--sl-font-sans);
         color: var(--sl-color-neutral-800);
       }
+      :root,
+      :host {
+        --sl-focus-ring-width: 1px;
+      }
     </style>
-    <link rel='stylesheet' href='/node_modules/@shoelace-style/shoelace/dist/themes/light.css' />
   </head>
 
   <body>
     <card-manager></card-manager>
-    <script src='/src/app.js' type='module'></script>
+    <script src='/src/main.js' type='module'></script>
     <script src='/src/CardManager.js' type='module'></script>
   </body>
 </html>

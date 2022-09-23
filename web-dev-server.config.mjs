@@ -11,9 +11,11 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   plugins: [
     replace({
       preventAssignment: true,
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) || JSON.stringify('development'),
-      'process.env.SHOELACE_BASE': JSON.stringify('/node_modules/@shoelace-style/shoelace/dist'),
-    })
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        || JSON.stringify('development'),
+      'process.env.SHOELACE_BASE': JSON.stringify(
+        '/node_modules/@shoelace-style/shoelace/dist'),
+    }),
   ],
   nodeResolve: {
     exportConditions: ['browser', 'development'],
@@ -24,7 +26,9 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
         return next()
       }
 
-      if (context.url === '/' || context.url === '/index.html') {
+      // really simple check for url without file ending
+      // or exact index.html match
+      if (context.url.indexOf('.') === -1 || context.url === '/index.html') {
         context.url = '/src/index.html'
       }
       return next()
